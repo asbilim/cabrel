@@ -1,0 +1,159 @@
+.about-grid {
+  display: grid;
+  grid-template-areas:
+    "story story"
+    "values values"
+    "team team"
+    "contact contact";
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.story {
+  grid-area: story;
+  text-align: center;
+}
+
+.about-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.values {
+  grid-area: values;
+}
+
+.values-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.value-card {
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.team {
+  grid-area: team;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.contact {
+  grid-area: contact;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background-color: #f5f5f5;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.opening-hours ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.video-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+video {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+  .values-container,
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .values-container,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-member {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .about-grid {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .value-card {
+    padding: 1rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .video-section {
+    display: none;
+  }
+
+  .about-grid {
+    gap: 1rem;
+  }
+
+  .values-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .team-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .value-card,
+  .contact {
+    background-color: transparent;
+    border: 1px solid #000;
+  }
+}
